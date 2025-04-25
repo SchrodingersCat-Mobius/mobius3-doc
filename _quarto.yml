@@ -13,9 +13,9 @@ website:
 # add links on the left hand side of the navbar (after the website title)
 # you can use a href: and a text: if you want to override the default naming which is based on the filename
     left:
-      - href: index.qmd
+      - href: index.md
         text: Home
-      - about.qmd
+      - about.md
 # use right: to add links on the right hand side of the navbar and menu: to add a drop-down list of links.
     right:
       - href: https://mobiuslooper.com/downloads/

@@ -1,0 +1,96 @@
+project:
+  type: website
+
+website:
+  title: "MÖBIUS 3 DOCUMENTATION"
+# navbar controls what appears at the top of the page as a navigation bar
+  navbar:
+# control background color of navbar (can use color names from the html theme 
+# “primary”, “secondary”, “success”, “danger”, “warning”, “info”, “light”, “dark”, or use a hex color)
+    background: dark
+# add a logo to the left of the website title
+#    logo: images/logo.png
+# add links on the left hand side of the navbar (after the website title)
+# you can use a href: and a text: if you want to override the default naming which is based on the filename
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+# use right: to add links on the right hand side of the navbar and menu: to add a drop-down list of links.
+    right:
+      - href: https://mobiuslooper.com/downloads/
+        text: DOWNLOADS
+      - href: https://mobiuslooper.com/forum/public/
+        text: COMMUNITY    
+#      - text: "More"
+#        menu:
+#          - talks.md
+#          - about.md 
+
+# add sidebar if you want a left hand table of contents type menu for the site
+  sidebar:
+# style controls the "style" of the left hand sidebar options are "docked" or "floating"
+    style: "docked"
+# add a search box to the sidebar
+#   search: true
+# add items to the sidebar menu using contents:, use auto generate the items automatically 
+# based on the hierachy and names of the source folders and markdown filenames
+    contents: auto
+
+format:
+  html:
+    theme:
+# Choose one of the 25 available themes.  
+# If you want to have light and dark versions you can do that too by using light: and dark:
+# followed by the name of the theme.
+#      default
+#      cerulean
+#      cosmo
+#      cyborg
+ #     darkly
+#      flatly
+#      journal
+#      litera
+#      lumen
+#      lux
+#      materia
+#      minty
+#      morph
+#      pulse
+#      quartz
+       sandstone
+#      simplex
+#      sketchy
+#      slate
+#      solar
+#     spacelab
+#      superhero
+#      united
+#      vapor
+#      yeti
+#      zephyr
+#      light: sandstone
+#      dark: cyborg
+
+# Use styles.css if you want to do any style customisation 
+    css: styles.css
+
+# Set toc to true to get an automatic table of contents
+# toc-expand controls how many layers of the table of contents to show initially 
+# (use true, false or a number)
+# toc-depth controls how many levels the automatically generated table of contents will include in the menu
+    toc: true
+    toc-expand: true
+    toc-depth: 3
+# code-block-background 
+#    code-block-background: true
+#    code-copy: true
+#    page-layout: full
+#    grid:
+#      sidebar-width: 300px
+#      body-width: 800px
+#      margin-width: 280px
+#      gutter-width: 1.5rem
+
+
+

@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.43">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>transport – MÖBIUS 3 DOCUMENTATION</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-9a880097239a4d302006afb9e90fa47b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">MÖBIUS 3 DOCUMENTATION</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../about.html" aria-current="page"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://mobiuslooper.com/downloads/"> 
+<span class="menu-text">DOWNLOADS</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://mobiuslooper.com/forum/public/"> 
+<span class="menu-text">COMMUNITY</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../main/mcl.html">Main</a></li><li class="breadcrumb-item"><a href="../main/transport.html">Transport Basics</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Main</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../main/mcl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sections</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../main/overlays.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Parameter Layers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../main/sessions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Where are Sessions?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../main/synchronization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Synchronization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../main/transport.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Transport Basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../main/upgrading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Upgrading Old Installations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../main/using-midi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Configuring MIDI Devices</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/upgrading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Upgrading Old Installations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#transport-basics" id="toc-transport-basics" class="nav-link active" data-scroll-target="#transport-basics">Transport Basics</a></li>
+  <li><a href="#transport-parameters" id="toc-transport-parameters" class="nav-link" data-scroll-target="#transport-parameters">Transport Parameters</a></li>
+  <li><a href="#transport-control" id="toc-transport-control" class="nav-link" data-scroll-target="#transport-control">Transport Control</a></li>
+  <li><a href="#the-transport-for-old-mobius-users" id="toc-the-transport-for-old-mobius-users" class="nav-link" data-scroll-target="#the-transport-for-old-mobius-users">The Transport for Old Mobius Users</a></li>
+  <li><a href="#transport-master-tracks" id="toc-transport-master-tracks" class="nav-link" data-scroll-target="#transport-master-tracks">Transport Master Tracks</a></li>
+  <li><a href="#synchronizing-with-the-transport" id="toc-synchronizing-with-the-transport" class="nav-link" data-scroll-target="#synchronizing-with-the-transport">Synchronizing With The Transport</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../main/mcl.html">Main</a></li><li class="breadcrumb-item"><a href="../main/transport.html">Transport Basics</a></li></ol></nav></header>
+
+
+
+
+<p>+++ title = ‘The Transport’ draft = false summary = ‘Instructions for using the Transport to synchronize tracks and send MIDI clocks.’ +++</p>
+<p>The <em>Transport</em> is a new feature in build 30. It is responsible for the generation of MIDI clocks that can be used to synchronize with external hardware devices or other applications, and is the primary mechanism for recording multiple tracks that play in synchronization with each other without drifting apart.</p>
+<p>What the Transport does can be difficult to talk about, depending on your history with Mobius. For those that are relatively new, the Transport may seem obvious. All DAWs have a similar concept: a tape-like timeline with a tempo, time signature, a metronome, and control buttons like <em>Play</em> and <em>Stop</em>. Some of the more sophisticated hardware loopers do as well.</p>
+<p>For those that have used Mobius for a long time, the need for the transport may not seem obvious. Tracks have long been able to generate MIDI clocks and synchronize with each other, so why would you be interested in something new that does the same thing?</p>
+<p>I’m going to start by describing how the transport can be used from the perspective of someone new to Mobius, without any preconcieved notions about how things were done in the past. Later there is a section intended for older users that compares the transport with older, similar features and explains why you might wish to use the transport instead.</p>
+<section id="transport-basics" class="level3">
+<h3 class="anchored" data-anchor-id="transport-basics">Transport Basics</h3>
+<p>Fundamentally, the transport is like a metronome. You give it a tempo, start it, and while it is running it will generate <em>pulses</em> or <em>beats</em> at that tempo. You can use these beats for several things, but mostly they are used to start and stop the recording of a track at exact times.</p>
+<p>Simple metronomes only generate beats at a defined tempo. But it is usually desireable to think about music in larger units of time. No one turns to their band and says “let’s play a 48 beat blues!”. Beats are usually combined into larger units called <em>measures</em> or <em>bars</em>, and bars are then combined into even larger units called <em>songs</em> or in our case <em>loops</em>.</p>
+<p>The Transport allows you to define three units of time: <em>beat</em>, <em>bar</em> and <em>loop</em>. When you create a synchronized recording you can choose to start and stop the recording on any of these three time units. The reordings may not all be exactly the same length but they will all share the same <em>fundamental beat length</em>.</p>
+<p>These concepts should be familiar to anyone that has experience using a DAW. Synchronizing things with the Mobius transport is very much like synchronizing with the plugin host. It’s just that the transport lives inside Mobius and that gives us more control over how it behaves.</p>
+</section>
+<section id="transport-parameters" class="level3">
+<h3 class="anchored" data-anchor-id="transport-parameters">Transport Parameters</h3>
+<p>The transport supports a number of parameters to define how it generates synchronization pulses. These are currently set in the <a href="session">Session</a> but other more convenient ways will be provided in the future.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../docs/images/transport-parameters.png" class="img-fluid figure-img"></p>
+<figcaption>Transport Parameters</figcaption>
+</figure>
+</div>
+<p>The most important transport parameters are:</p>
+<ul>
+<li>Default Tempo</li>
+<li>Beats Per Bar</li>
+<li>Bars Per Loop</li>
+</ul>
+<p>The transport always generates beat pulses at a defined tempo. There are several ways to define this tempo, the session just defines the default or <em>starting</em> tempo the transport will have when you bring up Mobius for the first time. You may also define the tempo during performance by using <strong>Tap Tempo</strong> in the UI, or by recording a <strong>Transport Master</strong> track.</p>
+<p>The <em>Beats Per Bar</em> parameter defines the length of a bar in units of beats, and <em>Bars Per Loop</em> defines the length of a loop in units of bars. The most common value for <em>Beats Per Bar</em> is 4. The value of <em>Bars Per Loop</em> is often just 1 in which case a bar and a loop will be the same size.</p>
+<section id="why-bars-per-loop" class="level4">
+<h4 class="anchored" data-anchor-id="why-bars-per-loop">Why “Bars Per Loop”?</h4>
+<p>For the same reason that multiple beats are almost always organized into measures or bars, multiple bars are often thought of as a larger unit of time: a 12-bar blues for example. While the beats per bar will often stay the same from one performance to another, larger collections of bars will vary depending on the structure of the song you have in mind, or the backing track you are using. It is not necessary to use Bars Per Loop, but you may find it convenient when recording long tracks. If you record a track that is 2 minutes long at 4/4 time, it might conceptually be 12, 16, 24, or 32 bars long. If you know that is what you are going to create ahead of time, you can set Bars Per Loop accordingly which can then assist in selecting synchronization points, rather than having to count bars as they play.</p>
+</section>
+<section id="sending-midi-clocks" class="level4">
+<h4 class="anchored" data-anchor-id="sending-midi-clocks">Sending MIDI Clocks</h4>
+<p>The Transport now controls the way in which Mobius generates MIDI clocks, replacing the older concept of <em>Out Sync Mode</em>. Once the transport tempo is defined, and the transport is <em>started</em> MIDI clocks may or may not be generated. If you want to generate MIDI clocks while the transport is running you must check the <em>Send Midi</em> parameter. When this parameter is checked, a MIDI <em>Start</em> or <em>Continue</em> message is sent whenever the transport is started along with clocks at the transport’s tempo. When you stop the transport a MIDI <em>Stop</em> message is sent.</p>
+<p>When the transport is stopped, you can choose whether or not to continue sending MIDI clocks. It is usually benneficial to keep clocks going even while stopped so that you give external devices time to adapt to tempo changes before they are started. Some older devices may be confused by that, in which case you can control this with the <em>Send Clocks When Stopped</em> parameter.</p>
+<p>The <em>Manual Start</em> option is a more advanced topic that will be discussed in detail later. If this option is checked, a MIDI <em>Start</em> message is not sent immediately when the transport is started, instead it waits for you to send it with the <em>MidiStart</em> action that may be bound to a footswitch or other trigger.</p>
+<p>The <em>Min Tempo</em> and <em>Max Tempo</em> parameters are used when defining the transport tempo from a <em>Master Track</em>. This is discussed later.</p>
+</section>
+<section id="metronome" class="level4">
+<h4 class="anchored" data-anchor-id="metronome">Metronome</h4>
+<p>While not available yet, the transport will support an optional metronome. Like most metronomes it will play a short sample on each beat, bar, or loop point that the transport reaches once it has been started. Also planned are “count in beats” which are common in other applications. This is still under development so suggestions are welcome.</p>
+</section>
+</section>
+<section id="transport-control" class="level3">
+<h3 class="anchored" data-anchor-id="transport-control">Transport Control</h3>
+<p>While the Session contains the starting parameters for the transport, to use it you will need to add the <strong>Transport Element</strong> to the user interface. Since this is a new feature it is not visible by default. To add it, go to the <em>Display</em> menu and select <em>Edit Layouts</em>. Then under the <em>Main Elements</em> tab, drag the element named “Transport” from the right side to the left. Click Save. Like other UI elements, the Transport can be moved around by clicking on it and dragging it, and it can be resized by clicking and dragging on the border.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../docs/images/transport-overview.png" class="img-fluid figure-img"></p>
+<figcaption>Transport Element</figcaption>
+</figure>
+</div>
+<p>The Transport Element contains several subcomponents that, being a science nerd, I’ll call “atoms”. The atoms are arranged in two rows. The top row contains the <em>Loop Radar</em>, <em>Beat Flasher</em>, <em>Stop Button</em>, <em>Tap Tempo Button</em>, and <em>Tempo Display</em>. The bottom row contains information about the <em>Beats Per Bar</em>, <em>Bars Per Loop</em>, the current beat within the bar, and the current bar within the loop.</p>
+<p>You start the transport playing by pressing the <strong>Start</strong> button. While playing the text inside the button changes to <strong>Stop</strong> and clicking on it again will stop the transport. The <strong>Tap</strong> button can be used to enter a tempo by clicking on it twice. The current transport tempo is displayed to the right of the Tap button. The range of tempos you can enter is constrained by the <strong>Min Tempo</strong> and <strong>Max Tempo</strong> session parameters. If you tap a tempo outside this range it will be doubled or halved until it fits within this range.</p>
+<p>While the transport is playing the <em>Loop Radar</em> will fill with color, similar to the loop radar in a track. As the transport crosses beat, bar, or loop boundaries, the <em>Beat Flasher</em> will flash: green on each beat, yellow on each bar, and red on each loop.</p>
+</section>
+<section id="the-transport-for-old-mobius-users" class="level3">
+<h3 class="anchored" data-anchor-id="the-transport-for-old-mobius-users">The Transport for Old Mobius Users</h3>
+<p>Talking about what the transport does and how it is used may be difficult for older Mobius users. Mobius grew up without a transport and it evolved ways to accomplish the same things using different terminology.<br>
+For older users, the simplest way to think of the transport is as a short empty track that you record simply for the purposes of synchronizing other tracks. This was a common technique in the past. This empty track would be the Out Sync Master, it would generate MIDI clocks, and the other tracks could synchronize with it using Track Sync.</p>
+<p>Like an empty track, the transport has a length, this length can be converted into a clock tempo, and the length can be divided into smaller units. The subdivisions of a track have been called <em>Cycles</em> and <em>Subcycles</em>. The transport uses the more familiar terms <em>Bars</em> and <em>Beats</em>. Unlike a track, the Transport does not record or play any audibile content, and the tempo can be more freely controlled.</p>
+<p>Old-school loopers have come to think of a transport as a <em>bad thing</em>. It is something that locks you into a tempo and forces you to make loops that are of a pre-defined size. They much prefer “first loop capability” where you can define the length of loops on the fly using any tempo or length they choose at the time. It is important to understand that while the Mobius transport can be used to record loops of a pre-defined tempo and size, that is only one way to use it. When you think about it, selecting a tempo using “tap tempo” is really no different than recording a “first loop”. You are defining a span of time with two presses of a button, and once that span of time is locked in, you can choose to synchronize with it.</p>
+<p>What makes the Mobius transport different than synching with the plugin host transport, is that the tempo of the transport can be defined by recording a live audio track. To do that, the track is configured to be the <em>Transport Master</em>.</p>
+</section>
+<section id="transport-master-tracks" class="level3">
+<h3 class="anchored" data-anchor-id="transport-master-tracks">Transport Master Tracks</h3>
+<p>To control the tempo of the transport from a track, the track must be made the <em>Transport Master</em>. There are two ways to accomplish this, the first is by configuring the track’s <em>Sync Source</em> parameter in the session.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../docs/images/transport-master.png" class="img-fluid figure-img"></p>
+<figcaption>Transport Master Configuration</figcaption>
+</figure>
+</div>
+<p>Most of the names in the <em>Sync Source</em> menu represent things that generate sync pulses. The name <em>Master</em> is a special case that means that this track would like to sync with the Transport, but it wants to <strong>control</strong> the transport tempo rather than following it.</p>
+<p>For old Mobius users, this is similar to the old <em>Sync Mode</em> parameter value named <em>Out</em>.</p>
+<p>When a track using <em>Sync Source Master</em> is finished recording, the length of the track is analyzed and converted into a tempo to give to the transport. The formula for calculating the tempo is somewhat complex, but is obvious in most cases for shorter loops where it behaves much like <em>tap tempo</em>. For long loops of many seconds, it is influenced by the <em>Bars Per Loop</em> parameter which will divide long loops into smaller sections before deriving the tempo. The resulting tempo will then be constrained by the <em>Min Tempo</em> and <em>Max Tempo</em> parameters in the same way as using the <em>Tap</em> button in the transport element.</p>
+<p>When a track is the Transport Master, the transport will be started automatically as soon as the track finishes recording. If the <em>Send Midi</em> transport parameter is also checked, this will begin generating MIDI clocks.</p>
+<section id="multiple-tracks-with-sync-source-master" class="level4">
+<h4 class="anchored" data-anchor-id="multiple-tracks-with-sync-source-master">Multiple Tracks with Sync Source Master</h4>
+<p>There can only be one Transport Master track at a time. If you have several tracks configured with <em>Sync Source Master</em>, the first one recorded will become the transport master, and the others will revert to synchronizing with the Transport itself.</p>
+<p>This is different than old Mobius behavior where if a track used SyncMode=Out and there was already an OutSyncMaster, it would switch to using <em>Track Sync</em> instead.</p>
+</section>
+<section id="changing-the-transport-master-track" class="level4">
+<h4 class="anchored" data-anchor-id="changing-the-transport-master-track">Changing the Transport Master Track</h4>
+<p>The track that is considered the transport master may be changed at any time by sending the <em>SyncMasterTransport</em> function to the desired track. When that happens, the length of the new track determines the transport tempo. Even tracks that did not use <em>Sync Source Master</em> can request to become the transport master.</p>
+<p>The master track may also be <em>disconnected</em> from the transport. Disconnection may be requested by sending the <em>SyncMasterTransport</em> function to a track that is already the transport master. In other words, the <em>SyncMasterTransport</em> function toggles the state of being the transport master.</p>
+<p>A track may also be disconnected from the transport if the active loop is reset, or if the track switches to a loop that is empty.</p>
+<p>Once a the transport master track is disconnected, another master will be automatically selected if that track is configured with a <em>Sync Source</em> of <em>Master</em> and it is changed to have an active loop that is not empty. This may be done by re-recording an empty loop, or switching from an empty loop to a loop that is not empty. This is called making the track “available”. Only tracks that have <em>Sync Source</em> <em>Master</em> will be automatically selected as the master. A track that does not use <em>Master</em> can only become the master by sending it the <em>SyncMasterTransport</em> function manually.</p>
+</section>
+<section id="editing-the-transport-master-track" class="level4">
+<h4 class="anchored" data-anchor-id="editing-the-transport-master-track">Editing the Transport Master Track</h4>
+<p>While a track is connected to the transport, changes made to the track that alter it’s size may result in a corresponding change to the transport’s tempo. Not every change to a track will result in a transport tempo change. If you enlarge the track using “rounding” functions like Multiply, InstantMultiply, or Insert, or use forms of quantization, the fundamental beat length of the track will remain the same and the transport tempo will not change. Examples of changes that will change the fundamental beat length are Unrounded Multiply and Unrounded Insert without any quantization.</p>
+<p>If you reset the loop in the master track, or switch to a loop that is empty, this does not automatically reassign the master track and will not alter the transport tempo. The track enters a state of being disconnected from the transport and the transport is allowed to run at it’s current tempo. If you then switch to a non-empty loop or re-record a new loop in the master track, it will reconnect to the transport and possibly change it’s tempo.</p>
+</section>
+</section>
+<section id="synchronizing-with-the-transport" class="level3">
+<h3 class="anchored" data-anchor-id="synchronizing-with-the-transport">Synchronizing With The Transport</h3>
+<p>Tracks that are not the transport master track can synchronize with the transport by setting their <em>Sync Source</em> to <em>Transport</em>. New recordings in those tracks will begin and end when the transport reaches the location specified by the <em>Sync Unit</em> parameter which may be either <em>Beat</em>, <em>Bar</em>, or <em>Loop</em>. To synchronize with the transport it must be started, either manually with the <em>Start</em> button in the transport UI or automatically when a master track is connected.</p>
+<p>Synchronizing with the Mobius transport is very much like synchronizing with a plugin host’s transport.</p>
+<p>For more on other forms of synchronization see the <a href="../synchronization">Synchronization</a> chapter.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/SchrodingersCat-Mobius\.github\.io\/mobius3-doc\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

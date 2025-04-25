@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.43">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>overlays – MÖBIUS 3 DOCUMENTATION</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-9a880097239a4d302006afb9e90fa47b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">MÖBIUS 3 DOCUMENTATION</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../about.html" aria-current="page"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://mobiuslooper.com/downloads/"> 
+<span class="menu-text">DOWNLOADS</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://mobiuslooper.com/forum/public/"> 
+<span class="menu-text">COMMUNITY</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../main/mcl.html">Main</a></li><li class="breadcrumb-item"><a href="../main/overlays.html">Parameter Layers</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Main</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../main/mcl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sections</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../main/overlays.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Parameter Layers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../main/sessions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Where are Sessions?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../main/synchronization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Synchronization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../main/transport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Transport Basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../main/upgrading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Upgrading Old Installations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../main/using-midi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Configuring MIDI Devices</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/upgrading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Upgrading Old Installations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#defining-overlays" id="toc-defining-overlays" class="nav-link active" data-scroll-target="#defining-overlays">Defining Overlays</a></li>
+  <li><a href="#overlay-table-menu" id="toc-overlay-table-menu" class="nav-link" data-scroll-target="#overlay-table-menu">Overlay Table Menu</a></li>
+  <li><a href="#activating-overlays" id="toc-activating-overlays" class="nav-link" data-scroll-target="#activating-overlays">Activating Overlays</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../main/mcl.html">Main</a></li><li class="breadcrumb-item"><a href="../main/overlays.html">Parameter Layers</a></li></ol></nav></header>
+
+
+
+
+<p>+++ title = ‘Using Parameter Overlays’ draft = false +++</p>
+<p>An <strong>Overlay</strong> is a collection of parameters that can be combined with the parameters defined in the session. Overlays replace the older concept of the <strong>Preset</strong>.</p>
+<p>It is important to understand that using overlays is not required. Many will find it simpler just to set all parameters in the session. Until you reach a point where you feel you need what they do, I recommend you do <strong>not</strong> use overlays. They complicate how parameter behave and can make it difficult to understand why a change you made doesn’t seem to have any effect.</p>
+<p>If you are upgrading from Mobius 2.5 or an earlier version of 3.x then you are automatically given a set of overlays that correspond to your old <em>Presets</em>. You can continue to use those in much the same way as you used presets, but I encourage you to think about whether you can stop using them and instead just use some of the new features built into the session.</p>
+<section id="parameter-layers" class="level4">
+<h4 class="anchored" data-anchor-id="parameter-layers">Parameter Layers</h4>
+<p>The concept of <em>parameter layers</em> was introduced in the <a href="../sessions">Using Sessions</a> document. To understand how parameter overlays work, it is helpful to think of parameters as being organized into several <strong>layers</strong>. Each layer may have any number of parameter values in it. When a function or script needs the value of a parameter it searches through each layer from top to bottom until it finds a value. If a value does not exist in one layer, it moves to the layer below it, and continues until it finds a value.</p>
+<p>The complete set of layers including overlays is shown in this diagram.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../docs/images/parameter-layers-2.svg" class="img-fluid figure-img"></p>
+<figcaption>Parameter Layers</figcaption>
+</figure>
+</div>
+<p>There is always one layer at the bottom called the <em>session defaults layer</em>. These are the parameters you set in the <em>Edit Session</em> window under the <em>Default Parameters</em> tab. For many uses of Mobius, this is the only layer you need. All of the parameters you want to use are set as session defaults and shared by all tracks. There are no other layers to think about.</p>
+<p>Often though, you will want some tracks to use parameter values that are different than the session defaults. The <em>syncMode</em> parameter is one of those as are <em>inputPort</em> and <em>outputPort</em>. For example you may want the default <em>syncMode</em> to be <em>Host</em> to synchronize with the host transport, but want some of the tracks to use a <em>syncMode</em> of <em>None</em> so the recordings in those tracks can be freely created with any length. Or you may be using a mult-channel audio interface and want each track to have a differnet <em>inputPort</em> so that each track can record a different instrument plugged into a jack on the audio interface. Or you may want some tracks to use the <em>quantize</em> parmeter set to <em>loop</em> to execute functions when the loop reaches the end, and other tracks to not use quantization at all.</p>
+<p>To make a track use a parameter value other than the session default, you create a <em>track override layer</em> in the <em>Edit Session</em> window. Any parameters you add to the track override layer will be used instead of the values found in the session defaults layer. In normal use, the track override layer will only contain a few parameters, with most parameters comming from the session default layer.</p>
+</section>
+<section id="how-sessions-layers-and-overlays-combine" class="level4">
+<h4 class="anchored" data-anchor-id="how-sessions-layers-and-overlays-combine">How Sessions layers and Overlays Combine</h4>
+<p>As mentioned, most uses of mobius will have two layers for each track. The session defaults and the track overrides. These are both defined in the <em>Edit Session</em> window and will persist as long as you are using that session.</p>
+<p>The <strong>sessionOverlay</strong> when activated sits between the session default layer and the track override layer, and the <strong>trackOverlay</strong> sits above the track override layer.</p>
+<p>If you have both overlays enabled, there are then four parameter layers that can each contribute parameter values.</p>
+</section>
+<section id="why-would-you-want-overlays" class="level4">
+<h4 class="anchored" data-anchor-id="why-would-you-want-overlays">Why would you want overlays?</h4>
+<p>Well, you don’t necessarily. You may find that you have them if you upgraded from an eariler Mobius release, because what used to be called Presets have been converted. THe session overlay is what used to be called the Setup Default Preset and the track overlay is what used to be called the Track Preset.</p>
+<p>What made Presets different from Setups is that they could be channged quickly at any time. You could start using a track with a certain set of IO ports, synchronization settings, or quantization settings. Then in mid performace change presets and all of those parameters would change. Overlays are the same, they can be used to make rapid changes to many parameters at the same time.</p>
+<p>This differs from editing the session. Sessions should be thought of as things you use for a long period of time, at least one “song” during a performance, and possibly an entire performance. Overlays can be changed any time, many times during a song if necessary. If you need to change more than one parameter at exactly the same time, overlays are a convenient way to do that. They are easier to use than a script that sets multiple paraeters, or binding several MIDI buttons to different parameters and pressing multiple buttons.</p>
+</section>
+<section id="why-do-overlays-converted-from-presets-suck" class="level4">
+<h4 class="anchored" data-anchor-id="why-do-overlays-converted-from-presets-suck">Why do overlays converted from Presets suck?</h4>
+<p>Presets were large. They contined around 45 parameters. For most people, presets were almost entirely the same except for a handful of commonly changed parameters like syncMode and inputPort. Once you had built a few Presets and wanted to start using something like <em>switchQuantize</em> set to <em>loop</em> at all times, then you would have to edit every Preset and make that change.</p>
+<p>So after an upgrade, it is recommended that you revisit the overlays that were converted from Preset and remove all of the parameters that you don’t care about, parameters that can just use the session defaults.</p>
+</section>
+<section id="overlay-best-practices" class="level4">
+<h4 class="anchored" data-anchor-id="overlay-best-practices">Overlay best practices</h4>
+<p>Overlays should be as small as possible. They should only contain the parameters you need for a particular purpose. If you aren’t using one of the esoteric parameters like slipTime or muteMode, leave them out. Let parameters you rarely or never used just be defined by the session defaults.</p>
+</section>
+<section id="when-to-use-the-session-overlay-vs.-the-track-overlay" class="level4">
+<h4 class="anchored" data-anchor-id="when-to-use-the-session-overlay-vs.-the-track-overlay">When to use the Session Overlay vs.&nbsp;the Track Overlay</h4>
+<p>The session overlay supplies parameters for all tracks. Let’s say you have two instruments, a keyboard and a guitar. The keyboard is plugged into jack 1 on the audio interface and the guitar into jack 2. These are routed into Mobius as ports 1 and 2. The session default layer defines <em>inputPort</em> as 1 so you start recording the keyboard in all tracks. If you now want to switch to overdubbing with guitar, you could define a session overlay with inputPort set to 2 and activate that as the session overlay. All tracks will now receive on port 2.</p>
+<p>Track overlays would be used when you want to make one or more tracks behave differently than the others. Let most tracks receive parameters from the sesison defaults or the session overlay, and for only those tracks that need to be different give them a track overlay.</p>
+<p>Again, if you are wondering why or when you would use overlays, the chances are you don’t need to use them <em>at all</em>. Overlays will become visible only for older Mobius users that have used Presets in the past. If you are just starting out with a fresh installation there will be no overlays and you can consider whether you need them as time goes on.</p>
+</section>
+<section id="defining-overlays" class="level3">
+<h3 class="anchored" data-anchor-id="defining-overlays">Defining Overlays</h3>
+<p>Overlays are created and managed from the <em>Parameter Overlays</em> window which is displayed by selecting <em>Edit Overlays</em> from the <em>Overlays</em> menu. If this is a fresh installation, the overlays window will be mostly empty, if you have upgraded from a previous version, you should see entries in the overlay table on the left with names that correspond to your old Preset names.</p>
+<p>To create a new overlay right click over the table on the left and select <em>New</em>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../docs/images/overlays-first.png" title="An empty overlay window, waiting to be filled" class="img-fluid figure-img"></p>
+<figcaption>Empty Overlay Window</figcaption>
+</figure>
+</div>
+<p>A dialog pops up where you enter a name for the overlay. Like presets, all overlays must have unique names.</p>
+<p>Once youu have defined some overlays, clicking on the name of one of them in the table will display a <em>parameter tree</em> in the center and a <em>parameter form</em> on the right.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../docs/images/overlays-full.png" title="A whole bunch of overlays" class="img-fluid figure-img"></p>
+<figcaption>Full Overlay Window</figcaption>
+</figure>
+</div>
+<p>Like the <em>Edit Session</em> window, clicking on a category name in the parameter tree will display a form containing parameters in that category, but only if they are included in the overlay. If you do not see a category form, it means the overlay does not contain any parameters from that category.</p>
+<p><strong>NOTE WELL:</strong> Parameter forms in overlays do not behave the same as parameter forms in the session editor. Overlay forms are “sparse” meaning they will only show the parameters included in the overlay. This is becaues they exist independently of any sessions, and to not know how they are going to be used so they won’t show darkened parameter labels for defaulted parameters. Initially all parameter forms in a new overlay will be empty.</p>
+<p>To add parameters to an overlay, click and drag parameter names from the tree onto the form area. You then see fields being added to the form for each parameter you drag over. Once the form contains parameter fields you can change their values.</p>
+<p>If you decide you no longer want to include a parameter in an overlay, click on the parameter label in the form and drag it onto the tree area. The parameter will be removed from the form.</p>
+<p>As you click on overlay names in the table on the left, the forms will change to show only those parameters found in the selected overlay.</p>
+</section>
+<section id="overlay-table-menu" class="level3">
+<h3 class="anchored" data-anchor-id="overlay-table-menu">Overlay Table Menu</h3>
+<p>If you right click on an overlay name, a menu is displayed allowing you to copy, rename, or delete the overlay.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../docs/images/overlays-menu.png" class="img-fluid figure-img"></p>
+<figcaption>Overlays Menu</figcaption>
+</figure>
+</div>
+</section>
+<section id="activating-overlays" class="level3">
+<h3 class="anchored" data-anchor-id="activating-overlays">Activating Overlays</h3>
+<p>In order to use overlays, they must be <em>activated</em>. There are two ways to do this, either by selecting them in the session editor which makes them permanent, or by selecting them at runtime using the main menu or with bindings.</p>
+<p>To specify a track overlay in the session, select a track from the track table and click on the <em>Overlay</em> category in the tree view.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../docs/images/overlays-session-track.png" class="img-fluid figure-img"></p>
+<figcaption>Track Overlay</figcaption>
+</figure>
+</div>
+<p>The <em>Track Overlay</em> label will start out with dark text meaning this track does not override the session default. Click on it so that it turns bright, and select an overlay.</p>
+<p>For older Mobius users, what is happening here is equivalent to what previous versions of Mobius did in the <em>Track Setup</em> window by selecting a <em>Track Preset</em>.</p>
+<p>If you want all tracks to share the same overlay, a similar thing can be done in the <em>Default Parameters</em> tab of the session editor. The track overlay you select here will be used by all tracks unless they have a track-specific override. This is equivalent to what previous versions of Mobius did in the <em>Track Setup</em> window by selecting a <em>Default Preset</em>.</p>
+<p>Temporary track overlays can be selected from the main menu.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../docs/images/overlays-main-menu.png" class="img-fluid figure-img"></p>
+<figcaption>Overlays Menu</figcaption>
+</figure>
+</div>
+<p>When you select an overlay from the menu, it will only be sent to the track that currently has focus, the track with the white box around it in the UI. Note that unlike the old Preset menu, there is an item at the top named “[None]”. When you select this item, it removes any overlay that was previously selected for this track. Unlike Presets, it is permissible for a track to use <em>NO</em> overlays.</p>
+<p>Finally a temporary track overlay can be activated using bindings. In the bindings window select the tab named <em>Configurations</em>. You will see the names of all defined overlays and sessions in the list box. Select an overlay and set the trigger you would like to associate with it as usual.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../docs/images/overlays-bindings.png" class="img-fluid figure-img"></p>
+<figcaption>Overlays Menu</figcaption>
+</figure>
+</div>
+<p>Once you have created a binding to an overlay, it can be activated with one MIDI or keyboard button press rather than interacting with the UI menus or session editor windows.</p>
+<p><strong>NOTE WELL:</strong> Overlays selected from the main menu or with bindings are <strong>temporary</strong> and will be removed when the track is reset using either the <em>Track Reset</em> or <em>Global Reset</em> functions. After the track is reset, the track will revert to using using the overlay defined in the session (if any).</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/SchrodingersCat-Mobius\.github\.io\/mobius3-doc\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
